@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuario")
+@Table(name = "cliente")
 @Builder
 
 public class Cliente implements UserDetails {
@@ -28,10 +28,10 @@ public class Cliente implements UserDetails {
     @Column(name = "senha")
     private String senha;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private List<Endereco> enderecos;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private List<Telefone> telefones;
 
     @Override
