@@ -39,6 +39,8 @@ public class ClienteService {
             throw new ConflictException("Email já cadastrado", e.getCause());
         }
 
+
+
     }
     public boolean verificaEmailExistente(String email){
         return clienteRepository.existsByEmail(email);
